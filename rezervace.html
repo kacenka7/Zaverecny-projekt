@@ -1,0 +1,76 @@
+---
+layout: velaris-sablona
+title: Rezervace
+---
+
+<section class="rezervace">
+
+<h1>{{title}}</h1>
+
+    <div class="rezervace__datum">
+
+    <label  for="datum"> Datum </label>
+    <input type="datetime-local" id="datum" name="datum" required>
+
+    </div>
+
+    <div class="rezervace__cas">
+
+        <p>tohle musím ještě doplnit</p>
+
+    </div>
+
+    <div class="rezervace__pocetOsob">
+
+    <label for="pocetOsob">Počet osob</label>
+    <input type="number" name="pocetOsob" id="pocetOsob" min="0" max="20" placeholder="max 20 osob">
+
+
+    </div>
+
+
+     
+
+    <div class="rezervace__jmeno">
+        <label  for="jmeno"> Jméno </label>
+        <input type="text" name="jmeno" id="jmeno" required>
+
+    </div>
+
+    <div class="rezervace__prijmeni">
+        <label  for="jmeno"> Příjmení </label>
+        <input type="text" name="prijmeni" id="prijmeni" required>
+
+    </div>
+    
+
+    <div class="rezervace__telefon">
+
+        <label  for="telefon"> Telefonní číslo </label>
+
+        <input type="tel" id="telefon" name="telefon" required>
+
+    </div>
+
+    <div class="rezervace__email">
+
+        <label  for="email"> Emailová adresa </label>
+        <input type="email" id="email" name="email" required>
+
+    </div>
+
+    <div class="rezervace__poznamka">
+        
+        <label for="poznamka"></label>
+        <textarea name="poznamka" id="poznamka"></textarea>
+
+
+    </div>
+
+    <div class="rezervace__tlacitko">
+
+        <input type="submit" value="Potvrdit rezervaci" rows="10" maxlength="300">
+
+    </div>
+
+</section>
