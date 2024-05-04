@@ -3,6 +3,7 @@ html { box-sizing: border-box; }
 
 :root{
 	--hlavniBarva: rgba(206, 195, 188, 1);
+    --bavaTextu: #333333 ;
 
     --pismo1: "Montserrat";
     --pismo2: "hind";
@@ -16,18 +17,39 @@ p{
     margin: 0;
 }
 
-
-
 body{
     background-color: var(--hlavniBarva);
     margin: 0;
     }
 
+.nadpis2{
+    font-family: var(--pismo1);
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+
+.tlacitko{
+    display: inline-block;
+    background-color: rgba(144, 124, 99, 0.3);
+    margin: 30px 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.tlacitko__odkaz{
+    font-family: var(--pismo1);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--bavaTextu);
+    font-weight: bolder;
+}
+
 
 /* Hlavička */
 
 .hlavicka{
-
     display: flex;
     flex-wrap: wrap;
     height: 600px;
@@ -35,26 +57,17 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    
 }
 
 /* Navigační lišta */
 
-.navigacniLista{
-   
+.navigacniLista{ 
     flex-basis: 100%;
     display: flex;
     flex-wrap: wrap; 
     height: 60px;
-
-    /* position: fixed;
-    top: 0;
-    width: 100%; */
-
-
     background-color: rgba(206, 195, 188, 0.5);
     transition: background-color 0.8s;
-  
 }
 
 .navigacniLista:hover{
@@ -63,7 +76,6 @@ body{
   }
 
 .navigacniLista__polozky{
-
     flex-basis: 35%;
 
     display: flex;
@@ -71,32 +83,29 @@ body{
 }
 
 .navigacniLista__polozka{
-
     flex-basis: 33.333333%;
     display: flex;
     Justify-content: center;
     align-items: center;
-    height: 60px;
-    
+    height: 60px;  
 }
 
-.odkaz{
+.navigacniLista__odkaz{
     text-decoration: none;
     font-family: var(--pismo1);
-    color: #333333;
+    color: var(--bavaTextu);
     font-weight: bold;
     font-size: 18px;
     padding: 10px 20px;
     transition: font-size 0.4s;
 }
 
-.odkaz:hover{
+.navigacniLista__odkaz:hover{
     font-size: 19px;
     transition: font-size 0.3s;
 
 }
 .navigacniLista_nazev{
-
     flex-basis: 65%;
 
     display: flex;
@@ -106,7 +115,6 @@ body{
 
 
 .logoObrazek{
-    
     flex-basis: 70%;  
 }
 
@@ -114,24 +122,19 @@ body{
 /* hlavicka nadpis */
 
 .hlavicka__nadpis{
-
-
     flex-basis: 100%;
     height: 440px;
 
     display: flex;
     Justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
 }
 
 .hlavicka__box{
-
     display: flex;
     Justify-content: center;
     align-items: center;
 
-    
     background-color: rgba(206, 195, 188, 0.5);
     text-align: center;
     height: 300px;
@@ -139,11 +142,9 @@ body{
 }
 
 .hlavicka__text{
-
     font-weight: bold;
     font-family: var(--pismo2);
     color: #333333;;
-
 }
 
 .hlavicka__velaris{
@@ -157,33 +158,72 @@ body{
 /* Vítejte */
 
 .vitejte{
-
     display: flex;
     Justify-content: center;
     align-items: center;
-
 }
 
 
 .vitejte__text{
-
-    padding: 10px 0;
     width: 70%;
     text-align: center;
+}
+
+
+
+/* Menu */
+
+.menu{
+    background-color: rgba(144, 124, 99, 0.3);
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__box{
+    display: flex;
+    flex-wrap: wrap;
+    height: 450px;
+    width: 70%;
+}
+
+.menu__obrazky{
+    flex: calc(100%/3);
+    height:80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 
-.nadpis2{
+.menu__obrazek{
+    max-height: 100%;
+    Box-shadow: rgba(144, 124, 99, 0.6) 0 0 5px ;
+}
 
-    font-family: var(--pismo1);
-    font-weight: normal;
-    text-transform: uppercase;
+.menu__odkazy{
+    flex: calc(100%/3);
+    height: 50px;
+    width: 100%;
+    background-color: var(--hlavniBarva);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+
+
 }
 
 
+.menu__odkaz{
+    display: block;
 
 
-
+}
 
 
 
