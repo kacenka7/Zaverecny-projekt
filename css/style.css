@@ -2,7 +2,12 @@ html { box-sizing: border-box; }
 *, ::after, ::before { box-sizing: inherit; }
 
 :root{
-	--hlavniBarva: rgba(206, 195, 188, 1);
+	--hlavniBarva:rgba(206, 195, 188, 0.8);
+    --hlavniBarvaPruhledna:rgba(206, 195, 188, 0.5);
+
+    --sekundarniBarva: rgba(144, 124, 99, 0.2);
+
+
     --bavaTextu: #333333 ;
 
     --pismo1: "Montserrat";
@@ -15,26 +20,57 @@ html { box-sizing: border-box; }
 p{
     font-family: var(--pismo2);
     margin: 0;
+    color: var(--bavaTextu);
 }
 
 body{
     background-color: var(--hlavniBarva);
     margin: 0;
-    }
+}
+
+.nadpis1{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 70px;
+    font-family: var(--pismo1);
+    color: var(--bavaTextu);
+    text-decoration: none;
+}
 
 .nadpis2{
     font-family: var(--pismo1);
     font-weight: normal;
     text-transform: uppercase;
-    margin: 30px 0;
+    margin: 0 0 15px 0;
+    color: var(--bavaTextu);
+    text-decoration: none;
 }
 
 .tlacitko{
     display: inline-block;
-    background-color: rgba(144, 124, 99, 0.3);
-    margin: 30px 20px;
+    background-color: rgba(144, 124, 99, 0.2);
+    margin:  25px 0 0 0;
     padding: 15px 20px;
     border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.tlacitko2{
+    display: inline-block;
+    background-color: rgba(206, 195, 188, 0.7);
+    margin:  25px 0 0 0;
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.tlacitko:hover{
+    transform: scale(1.1)
+}
+
+.tlacitko2:hover{
+    transform: scale(1.1)
+
 }
 
 .tlacitko__odkaz{
@@ -66,7 +102,7 @@ body{
     display: flex;
     flex-wrap: wrap; 
     height: 60px;
-    background-color: rgba(206, 195, 188, 0.5);
+    background-color: var(--hlavniBarvaPruhledna);
     transition: background-color 0.8s;
 }
 
@@ -85,34 +121,34 @@ body{
 .navigacniLista__polozka{
     flex-basis: 33.333333%;
     display: flex;
-    Justify-content: center;
+    justify-content: center;
     align-items: center;
     height: 60px;  
 }
 
 .navigacniLista__odkaz{
     text-decoration: none;
+    text-transform: uppercase;
     font-family: var(--pismo1);
     color: var(--bavaTextu);
     font-weight: bold;
     font-size: 18px;
     padding: 10px 20px;
-    transition: font-size 0.4s;
 }
 
 .navigacniLista__odkaz:hover{
     font-size: 19px;
-    transition: font-size 0.3s;
+    transition: font-size 0.4s;
 
 }
+
 .navigacniLista_nazev{
     flex-basis: 65%;
 
     display: flex;
-    Justify-content: left;
+    justify-content: left;
     align-items: center;
 }
-
 
 .logoObrazek{
     flex-basis: 70%;  
@@ -132,98 +168,183 @@ body{
 
 .hlavicka__box{
     display: flex;
-    Justify-content: center;
+    justify-content: center;
     align-items: center;
 
-    background-color: rgba(206, 195, 188, 0.5);
+    background-color: var(--hlavniBarvaPruhledna);
     text-align: center;
     height: 300px;
     width: 70%;
+    
 }
 
 .hlavicka__text{
     font-weight: bold;
     font-family: var(--pismo2);
-    color: #333333;;
-}
-
-.hlavicka__velaris{
-
-    text-transform: uppercase;
-    font-weight: normal;
-    font-size: 70px;
-    font-family: var(--pismo1);
+    text-decoration: none;
 }
 
 /* Vítejte */
 
 .vitejte{
-    display: flex;
-    Justify-content: center;
-    align-items: center;
-}
-
-
-.vitejte__text{
-    width: 70%;
     text-align: center;
+    padding: 4% 10%;
 }
+
 
 
 
 /* Menu */
 
 .menu{
-    background-color: rgba(144, 124, 99, 0.3);
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: var(--sekundarniBarva);
+    text-align: center;
+    padding: 5% 10%;
 }
 
 .menu__box{
     display: flex;
+}
+
+.menu__polozka{
+    flex: calc(100%/3);
+
+    display: flex;
     flex-wrap: wrap;
-    height: 450px;
-    width: 70%;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 5% 0 5%;
 }
 
 .menu__obrazky{
-    flex: calc(100%/3);
-    height:80%;
-
+    flex: 100%;
+    box-shadow: rgba(144, 124, 99, 0.6) 0 0 5px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    overflow: hidden;
 }
 
+
 .menu__obrazek{
-    max-height: 100%;
-    Box-shadow: rgba(144, 124, 99, 0.6) 0 0 5px ;
+    max-width: 100%;
+    transition: transform 0.5s;
+    position: relative; 
+}
+
+.menu__obrazek:hover{
+    transform: scale(1.1)
 }
 
 .menu__odkazy{
-    flex: calc(100%/3);
-    height: 50px;
-    width: 100%;
+    flex: 100%;
     background-color: var(--hlavniBarva);
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
- 
-
-
+    padding: 10px;
+    box-shadow: rgba(144, 124, 99, 0.6) 0 0 5px;
 }
 
 
 .menu__odkaz{
-    display: block;
+    text-decoration: none;
+    font-family: var(--pismo2);
+    color: var(--bavaTextu);
+    text-transform: uppercase;
+}
 
+.menu__odkaz:hover{
+    font-weight: bold;
+    transition: font-weight 0.3s;
+}
+
+/* šéfkuchař */
+
+.sefkuchar{
+display: flex;
+padding: 5% 10%;
+text-align: center;
+}
+
+.sefkuchar__text{
+    flex: 50%;
+    padding: 5% 5% ;
+    background-color: var(--sekundarniBarva);
+
+    
+}
+
+.sefkuchar__obrazek{
+    flex: 50%;
+    display: flex;
+    padding: 0 10% 0 5% ;
+}
+
+.sefkuchar__foto{
+    max-width: 100%;
+    display: flex;
+    box-shadow: rgba(144, 124, 99, 0.6) 0 0 5px;
+}
+
+
+/* Degustační menu*/
+
+
+.degustacniMenu{
+background-image: url(/images/degustacni_menu.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+height: 500px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
+
+.degustacniMenu_box{
+    background-color: rgba(206, 195, 188, 0.7);;
+    width: 70%;
+    text-align: center;
+    padding: 5%;
+}
+
+/* Patička */
+
+.paticka{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+
+
+
+.paticka_autor{
+    flex: calc(100%/3);
+    text-align: center;
+    padding: 10px 20px;
+    font-family: var(--pismo1);
+}
+
+.paticka_adresa{
+    flex: calc(100%/3);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: right;
+    
+}
+
+.paticka_logo{
+    flex: calc(100%/3);
 
 }
+
+.paticka_odkaz{
+    font-family: var(--pismo1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+
 
 
 
