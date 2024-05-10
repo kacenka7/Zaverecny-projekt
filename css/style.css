@@ -7,7 +7,6 @@ html { box-sizing: border-box; }
 
     --sekundarniBarva: rgba(144, 124, 99, 0.2);
 
-
     --barvaTextu: #333333 ;
 
     --pismo1: "Montserrat";
@@ -39,6 +38,13 @@ body{
     margin: 0 0 25px 0;
 }
 
+@media screen and  (min-width: 640px){
+    .nadpis1{
+        font-size: 70px;
+        margin: 0 0 40px 0;
+    }  
+}
+
 .nezobrazovat{
     display: none;
 }
@@ -49,15 +55,6 @@ body{
     }
 }
 
-
-
-@media screen and  (min-width: 640px){
-    .nadpis1{
-        font-size: 70px;
-        margin: 0 0 40px 0;
-    }  
-}
-
 .nadpis2{
     font-family: var(--pismo1);
     font-weight: normal;
@@ -65,7 +62,7 @@ body{
     margin: 0 0 15px 0;
     color: var(--barvaTextu);
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 @media screen and  (min-width: 640px){
@@ -74,22 +71,26 @@ body{
     }  
 }
 
+.nadpis3{
+    font-family: var(--pismo1);
+    text-transform: uppercase;
+    margin: 15px 0;
+    font-weight: normal;
+    font-size: 15px;
+
+}
+
 .tlacitko{
     display: inline-block;
     background-color: rgba(144, 124, 99, 0.2);
-    margin:  25px 0 0 0;
+    margin:  4% 0 0 0;
     padding: 15px 20px;
     border-radius: 10px;
     transition: transform 0.5s;
 }
 
-.tlacitko2{
-    display: inline-block;
+.tlacitko--zmenaBarvy{
     background-color: rgba(206, 195, 188, 0.7);
-    margin:  25px 0 0 0;
-    padding: 15px 20px;
-    border-radius: 10px;
-    transition: transform 0.5s;
 }
 
 .tlacitko:hover{
@@ -138,6 +139,7 @@ body{
 	align-items: center;
     height: 60px;
     background-color: var(--hlavniBarvaPruhledna);
+    padding: 0 3%;
 }
 
 @media screen and  (min-width: 640px){
@@ -151,21 +153,80 @@ body{
       }   
 }
 
+.logoVelaris{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--pismo1);
+    color: var(--barvaTextu);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@media screen and  (min-width: 640px){
+    .logoVelaris{
+        transition: transform 0.5s;
+        position: relative;
+    }
+    .logoVelaris:hover{
+         transform: scale(1.1);
+     }
+}
+
+.navigacniLista__checkbox{
+    position: absolute;
+	Left: -9999px; 
+}
+
+.navigacniLista__popisekCheckboxu{
+    color: var(--barvaTextu);
+    text-decoration: none;
+    font-size: 25px;
+}
+
+@media screen and  (min-width: 640px){
+    .navigacniLista__popisekCheckboxu{  
+        display: none;
+    } 
+}
+
 .navigacniLista__menu{  
         margin: 0;
         padding: 0;
         list-style: none;
-        display: none;
+        /* display: none; */
+}
+
+.navigacniLista__checkbox:checked ~ .navigacniLista__menu{
+    display: block;
 }
 
 @media screen and  (min-width: 640px){
-    /* tady bude hamburgrové menu */
     .navigacniLista__menu{  
-        display: flex;
+        display: flex !important;
     } 
 }
 
+.navigacniLista__polozka{
+    background-color: var(--hlavniBarva);
+}
+
+
+@media screen and  (min-width: 640px){
+    .navigacniLista__polozka{
+        flex-basis: calc(100%/3);
+        padding: 5px;
+        transition: transform 0.5s;
+        position: relative; 
+        background-color: transparent;
+
+    }
+    .navigacniLista__polozka:hover{
+        transform: scale(1.1);
+    }
+}
+
 .navigacniLista__odkaz{
+    display: block;
     text-decoration: none;
     text-transform: uppercase;
     font-family: var(--pismo1);
@@ -175,26 +236,9 @@ body{
     padding: 10px 20px;
 }
 
-@media screen and  (min-width: 640px){
-    .navigacniLista__odkaz{
-        font-size: 20px;
-        transition: transform 0.5s;
-        position: relative;
-    }
-    .navigacniLista__odkaz:hover{
-         transform: scale(1.1);
-     }
-    .navigacniLista__polozka{
-        flex-basis: calc(100%/3);
-        padding: 5px;
-        transition: transform 0.5s;
-        position: relative; 
-    }
-    .navigacniLista__polozka:hover{
-        transform: scale(1.1);
-    }
-}
 
+
+    
 /* hlavicka nadpis */
 
 .hlavicka__nadpis{
@@ -220,13 +264,14 @@ body{
     background-color: var(--hlavniBarvaPruhledna);
     text-align: center;
     height: 200px;
-    width: 70%;
+    width: 80%;
     
 }
 
 @media screen and  (min-width: 640px){
     .hlavicka__box{
         height: 300px;
+        width: 70%;
     }  
 }
 
@@ -271,14 +316,15 @@ body{
     }
 }
 
-.menu__obrazky{
+.menu__boxNaObrazky{
     padding: 0 15%;
+    height: 250px;
 }
 
 
 @media screen and  (min-width: 640px){
 
-    .menu__obrazky{
+    .menu__boxNaObrazky{
         flex: 100%;
         box-shadow: rgba(144, 124, 99, 0.6) 0 0 5px;
         display: flex;
@@ -312,7 +358,6 @@ body{
     height: 100%;
 }
 
-
 @media screen and  (min-width: 640px){
     .menu__odkazy{
         flex: 100%;
@@ -341,7 +386,7 @@ body{
 /* šéfkuchař */
 
 .sefkuchar{
-padding: 5% 15%;
+padding: 10% 15%;
 text-align: center;
 }
 
@@ -351,12 +396,12 @@ text-align: center;
         flex-wrap: wrap;
         padding: 5% 10%;
         text-align: center;
-        height: 500px;
+        height: 580px;
         }
 }
 
 .sefkuchar__obrazek{
-    padding: 10%;
+    padding: 0 10% 10% 10%;
     height: 350px
 }
 
@@ -371,7 +416,7 @@ text-align: center;
 
 .sefkuchar__text{
     width: 100%;
-    padding: 10%;
+    padding: 5% 10%;
     background-color: var(--sekundarniBarva);
 }
 
@@ -414,61 +459,109 @@ align-items: center;
 }
 
 .degustacniMenu_box{
-    background-color: rgba(206, 195, 188, 0.7);;
-    width: 70%;
+    background-color: rgba(206, 195, 188, 0.7);
+    width: 80%;
     text-align: center;
     padding: 5%;
+}
+
+@media screen and  (min-width: 640px){
+    .degustacniMenu_box{
+        width: 70%;
+}
 }
 
 /* Patička */
 
 .paticka{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1%;
+    padding: 2.5% 0;
 }
-
-.paticka_autor{
-    flex: calc(100%/3);
+.paticka__logo{
     text-align: center;
-    padding: 10px 20px;
-    font-family: var(--pismo1);
-}
-
-.paticka_adresa{
-    flex: calc(100%/3);
-    display: none; 
 }
 
 @media screen and  (min-width: 640px){
-    .paticka_adresa{
-        flex: calc(100%/3);
-        padding: 10px 20px;
+  
+    .paticka{
         display: flex;
-        justify-content: right;  
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 3%;
+    }
+    .paticka__logo{
+        /* flex: calc(100%/3); */
+        text-align: left;
+    }
+    .paticka__autor{
+        display: block;
+        /* flex: calc(100%/3); */
+        text-align: center;
+        font-family: var(--pismo1);
+    }
+    .paticka__adresa{
+        display: block;
+        /* flex: calc(100%/3); */
+        text-align: right;  
+    }
+    .paticka__odkaz{
+        text-decoration: none;
+        /* text-transform: uppercase; */
+        font-family: var(--pismo1);
+        color: var(--barvaTextu);
+        font-size: 17px;
+        padding: 0 20px;
     }
 }
 
-.paticka_logo{
-    flex: calc(100%/3);
+/* Strana s jídelním lístkem */
+
+/* Jídelní lístek */
+
+.strankaMenu{
+    padding: 5% 10%;
 }
 
-.paticka_odkaz{
-    font-family: var(--pismo1);
-    text-decoration: none;
-    font-weight: bold;
+.strankaMenu__chod{
+    text-align: center;
+    padding: 5% 0;
 }
 
-.paticka_autor{
-    font-size: 11.5px;
+.strankaMenu__boxNaObrazky{
+    padding: 0 15%;
+    margin: 10% 0;
 }
 
+.strankaMenu_obrazek{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
+/* Strana s degustačním menu */
+.stranaDegustacniMenu{
+    padding: 5% 10%;
+    text-align: center;
+}
+.stranaDegustacniMenu__uvod{
+    padding: 5% 0;
+}
 
+/*stranka kontakt*/
 
+.stranaKontakt{
+    padding: 5% 10%;
+    text-align: center;
+}
 
+.stranaKontakt__oddil{
+    padding: 5% 0;
+}
 
-
-
-
+@media screen and  (min-width: 640px){
+    .stranaKontakt{
+        display: flex;
+        justify-content: space-between;
+        /* align-items: center; */
+        background-color: var(--sekundarniBarva);
+    }
+}
