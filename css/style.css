@@ -149,7 +149,6 @@ body{
     
     .navigacniLista:hover{
         background-color: rgba(206, 195, 188, 0.75);
-        transition: background-color 0.8s;
       }   
 }
 
@@ -203,17 +202,18 @@ body{
 @media screen and  (min-width: 640px){
     .navigacniLista__menu{  
         display: flex !important;
+        justify-content: space-between;
     } 
 }
 
 .navigacniLista__polozka{
     background-color: var(--hlavniBarva);
+    margin: 0;    
 }
 
 
 @media screen and  (min-width: 640px){
     .navigacniLista__polozka{
-        flex-basis: calc(100%/3);
         padding: 5px;
         transition: transform 0.5s;
         position: relative; 
@@ -235,8 +235,6 @@ body{
     font-size: 18px;
     padding: 10px 20px;
 }
-
-
 
     
 /* hlavicka nadpis */
@@ -513,12 +511,28 @@ align-items: center;
     }
 }
 
-/* Strana s jídelním lístkem */
-
-/* Jídelní lístek */
+/* Strana s Menu*/
 
 .strankaMenu{
     padding: 5% 10%;
+}
+
+@media screen and  (min-width: 640px){
+
+    .strankaMenu{
+        padding: 0 3%;
+    }
+
+    .navigacniLista__menu--zmenaPozadi{
+        background-color: var(--sekundarniBarva);
+        padding: 0 3%;
+        transition: background-color 0.8s;
+    }
+
+    .navigacniLista__menu--zmenaPozadi:hover{
+        background-color:  rgba(144, 124, 99, 0.35);
+    }
+    
 }
 
 .strankaMenu__chod{
@@ -537,7 +551,8 @@ align-items: center;
     object-fit: cover;
 }
 
-/* Strana s degustačním menu */
+/* Stránka  s degustačním menu */
+
 .stranaDegustacniMenu{
     padding: 5% 10%;
     text-align: center;
