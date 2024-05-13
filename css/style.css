@@ -5,7 +5,8 @@ html { box-sizing: border-box; }
 	--hlavniBarva:rgba(206, 195, 188, 0.8);
     --hlavniBarvaPruhledna:rgba(206, 195, 188, 0.5);
 
-    --sekundarniBarva: rgba(144, 124, 99, 0.2);
+
+    --sekundarniBarva: rgb(201, 191, 181);
 
     --barvaTextu: #333333 ;
 
@@ -59,7 +60,7 @@ body{
     font-family: var(--pismo1);
     font-weight: normal;
     text-transform: uppercase;
-    margin: 0 0 15px 0;
+    margin: 0 0 5% 0;
     color: var(--barvaTextu);
     text-decoration: none;
     font-size: 20px;
@@ -68,6 +69,7 @@ body{
 @media screen and  (min-width: 640px){
     .nadpis2{
         font-size: 30px;
+        margin: 0 0 3% 0;
     }  
 }
 
@@ -79,6 +81,7 @@ body{
     font-size: 15px;
 
 }
+
 
 .tlacitko{
     display: inline-block;
@@ -97,9 +100,8 @@ body{
     transform: scale(1.1)
 }
 
-.tlacitko2:hover{
+.tlacitko--zmenaBarvy:hover{
     transform: scale(1.1)
-
 }
 
 .tlacitko__odkaz{
@@ -110,6 +112,8 @@ body{
     color: var(--barvaTextu);
     font-weight: bolder;
 }
+
+
 
 
 /* Hlavička */
@@ -192,7 +196,13 @@ body{
         margin: 0;
         padding: 0;
         list-style: none;
-        /* display: none; */
+        display: none;
+}
+
+.navigacniLista__menu--pozice{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .navigacniLista__checkbox:checked ~ .navigacniLista__menu{
@@ -241,7 +251,7 @@ body{
 
 .hlavicka__nadpis{
     flex: 100%;
-    height: 360px;
+    height: 340px;
 
     display: flex;
     Justify-content: center;
@@ -262,8 +272,7 @@ body{
     background-color: var(--hlavniBarvaPruhledna);
     text-align: center;
     height: 200px;
-    width: 80%;
-    
+    width: 80%;  
 }
 
 @media screen and  (min-width: 640px){
@@ -290,6 +299,10 @@ body{
     background-color: var(--sekundarniBarva);
     text-align: center;
     padding: 5% 10%;
+}
+
+.menu__odkaz{
+    text-decoration: none;
 }
 
 @media screen and  (min-width: 640px){
@@ -352,7 +365,7 @@ body{
 .menu__odkazy{
     background-color: var(--hlavniBarva);
     box-shadow: rgba(144, 124, 99, 0.6) 0 0 5px;
-    margin: 0 15% 7% 15%;
+    margin: 0 15% 10% 15%;
     height: 100%;
 }
 
@@ -485,6 +498,7 @@ align-items: center;
         justify-content: space-between;
         align-items: center;
         padding: 0 3%;
+        background-color: var(--sekundarniBarva);
     }
     .paticka__logo{
         /* flex: calc(100%/3); */
@@ -511,33 +525,51 @@ align-items: center;
     }
 }
 
-/* Strana s Menu*/
-
-.strankaMenu{
-    padding: 5% 10%;
-}
+/* Stranka s Menu*/
 
 @media screen and  (min-width: 640px){
 
-    .strankaMenu{
-        padding: 0 3%;
-    }
+    .navigacniLista__menu--prizpusobeni{
+        padding: 0 8%;
+    }    
+}
 
-    .navigacniLista__menu--zmenaPozadi{
-        background-color: var(--sekundarniBarva);
-        padding: 0 3%;
-        transition: background-color 0.8s;
-    }
+.strankaMenu__predkrmy,
+.strankaMenu__dezerty{
+    padding: 10% 15%;
+    background-color: var(--sekundarniBarva);
+}
 
-    .navigacniLista__menu--zmenaPozadi:hover{
-        background-color:  rgba(144, 124, 99, 0.35);
-    }
-    
+
+.strankaMenu__hlavnoChody,
+.strankaMenu__napojovyListek{
+    padding: 10% 15%;  
+}
+
+
+@media screen and  (min-width: 640px){
+
+    .strankaMenu__predkrmy,
+    .strankaMenu__dezerty,
+    .strankaMenu__hlavnoChody,
+    .strankaMenu__napojovyListek{
+    padding: 3% 10%;
+    } 
 }
 
 .strankaMenu__chod{
     text-align: center;
-    padding: 5% 0;
+}
+
+@media screen and  (min-width: 640px){
+    .strankaMenu__chod{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .strankaMenu__box{
+        flex-basis: 50%;
+    }
 }
 
 .strankaMenu__boxNaObrazky{
@@ -545,9 +577,17 @@ align-items: center;
     margin: 10% 0;
 }
 
+@media screen and  (min-width: 640px){
+    .strankaMenu__boxNaObrazky{
+        flex-basis: 50%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
 .strankaMenu_obrazek{
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
 }
 
@@ -563,20 +603,160 @@ align-items: center;
 
 /*stranka kontakt*/
 
-.stranaKontakt{
+.strankaKontakt{
     padding: 5% 10%;
     text-align: center;
 }
 
-.stranaKontakt__oddil{
-    padding: 5% 0;
+@media screen and  (min-width: 640px){
+    .strankaKontakt{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--sekundarniBarva);
+        padding: 2% 5%;
+    }
+}
+
+.strankaKontakt__oddil{
+    padding: 0 0 5% 0;
 }
 
 @media screen and  (min-width: 640px){
-    .stranaKontakt{
-        display: flex;
-        justify-content: space-between;
-        /* align-items: center; */
-        background-color: var(--sekundarniBarva);
+    .strankaKontakt__oddil{
+        padding: 0 0 5% 0;
     }
+    .strankaKontakt__kontakt{
+        flex-basis: 50%;
+        padding: 5%;
+    }
+}
+
+.strankaKontakt__mapa{
+    padding: 5% 0 0 0;
+}
+
+.strankaKontakt__mapaOdkaz{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+@media screen and  (min-width: 640px){
+    .strankaKontakt__mapa{
+        flex-basis: 50%;
+        padding: 0;
+    }
+}
+
+
+/*Stránka rezervace*/
+
+.strankaRezervace{
+    padding: 5% 10%;
+    text-align: center;
+}
+
+@media screen and  (min-width: 640px){
+    .strankaRezervace{
+        padding: 5% 25%;
+        text-align: center;
+    }
+}
+
+.strankaRezervace__formular{
+    padding: 2% 10% ;
+}
+
+@media screen and  (min-width: 640px){
+    .strankaRezervace__formular{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .strankaRezervace__box{
+        flex: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .strankaRezervace__boxik1{
+        flex: 100%;
+        padding: 0 3%;
+    }
+
+    .strankaRezervace__boxik2{
+        flex: 50%;
+        padding: 0 3%;
+    }
+} 
+
+.strankaRezervace_labely{
+    font-family: var(--pismo2);
+    margin: 0;
+    color: var(--barvaTextu);
+    text-transform: uppercase;
+
+}
+
+.strankaRezervace__policko{
+    border: 1px solid var(--sekundarniBarva);
+    border-radius: 5px;
+    font-family: var(--pismo2);
+    width: 100%;
+    margin: 0 0 30px 0;
+    padding: 0 5%;
+    height: 35px;
+    text-align: center;
+    color: var(--barvaTextu);
+}
+
+.strankaRezervace__poznamka{
+    height: 160px;
+}
+
+.strankaRezervace__polePoznamka{
+    height: 100%;
+}
+
+.strankaRezervace__tlacitkoSubmit{
+    border: 1px solid var(--sekundarniBarva);
+    margin:  4% 0 0 0;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-family: var(--pismo1);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--barvaTextu);
+    font-weight: bolder;
+}
+
+@media screen and  (min-width: 640px){
+    .strankaRezervace__tlacitkoSubmit{
+        transition: transform 0.5s;
+    }
+
+    .strankaRezervace__tlacitkoSubmit:hover{
+        transform: scale(1.1)
+    } 
+} 
+
+/* Stránka Potvrzení rezervace */
+
+.strankaPotvrzeniRezervace{
+    text-align: center;
+    height: 100%;
+    padding: 5% 10%;
+}
+
+.strankaPotvrzeniRezervace__podpis{
+    padding: 5% 0 0 0;
+}
+
+.odstavec{
+    padding: 10px 0 0 0;
 }

@@ -3,74 +3,93 @@ layout: velaris-sablona
 title: Rezervace
 ---
 
-<section class="rezervace">
+<section class="strankaRezervace">
 
-<h1>{{title}}</h1>
+    <h2 class="nadpis2">{{title}}</h2>
 
-    <div class="rezervace__datum">
+    <form class="strankaRezervace__formular" action="https://submit-form.com/TACxpzrNn" method="post">
 
-    <label  for="datum"> Datum </label>
-    <input type="datetime-local" id="datum" name="datum" required>
+        <input type="hidden" name="_redirect" value="https://your-website.com/thanks" /> 
 
-    </div>
+        <div class="strankaRezervace__box">
+            <div class="strankaRezervace__boxik1">
+                <label class="strankaRezervace_labely" for="datum"> Datum: </label>
+                <input class="strankaRezervace__policko" type="date" id="datum" name="datum" required>
+            </div>
+        </div>
 
-    <div class="rezervace__cas">
+        <div class="strankaRezervace__box">
 
-        <p>tohle musím ještě doplnit</p>
+            <div class="strankaRezervace__boxik2">
+                <label class="strankaRezervace_labely" for="cas">Čas:</label>
+                <select class="strankaRezervace__policko" name="cas" id="cas">
+                    <option disabled selected>Zvolte čas</option>
+                    <option disabled>Oběd</option>
+                    <option value="11:00"> 11:00</option> 
+                    <option value="11:30"> 11:30</option> 
+                    <option value="12:00"> 12:00</option> 
+                    <option value="12:30"> 12:30</option> 
+                    <option value="13:00 - pouze o víkendu"> 13:00  - pouze o víkendu</option>
+                    <option value="13:30 - pouze o víkendu"> 13:30  - pouze o víkendu</option>
+                    <option disabled>Večeře</option>
+                    <option value="17:00"> 17:00</option> 
+                    <option value="17:30"> 17:30</option> 
+                    <option value="18:00"> 18:00</option> 
+                    <option value="18:30"> 18:30</option> 
+                    <option value="19:00"> 19:00</option>
+                    <option value="19:30"> 19:30</option>
+                    <option value="20:00"> 20:00</option> 
+                    <option value="20:30"> 20:30</option> 
+                </select>
+            </div>
 
-    </div>
+            <div class="strankaRezervace__boxik2">
+                <label class="strankaRezervace_labely" for="pocetOsob">Počet osob:</label>
+                <input class="strankaRezervace__policko" type="number" name="pocetOsob" id="pocetOsob" min="0" max="20" placeholder="max 20 osob">    
+            </div>
+        </div>
+            
+        <div class="strankaRezervace__box">
 
-    <div class="rezervace__pocetOsob">
+                <div class="strankaRezervace__boxik2">
+                    <label class="strankaRezervace_labely" for="jmeno"> Jméno: </label>
+                    <input class="strankaRezervace__policko" type="text" name="jmeno" id="jmeno" required>
+                </div>
 
-    <label for="pocetOsob">Počet osob</label>
-    <input type="number" name="pocetOsob" id="pocetOsob" min="0" max="20" placeholder="max 20 osob">
+                <div class="strankaRezervace__boxik2">
+                    <label class="strankaRezervace_labely" for="jmeno"> Příjmení: </label>
+                    <input class="strankaRezervace__policko" type="text" name="prijmeni" id="prijmeni" required>
+                </div>
 
+        </div>
+            
+        <div class="strankaRezervace__box">
 
-    </div>
+            <div class="strankaRezervace__boxik2">
+                 <label class="strankaRezervace_labely" for="telefon"> Telefonní číslo: </label>
+                <input class="strankaRezervace__policko" type="tel" id="telefon" name="telefon" required>
+            </div>
 
+            <div class="strankaRezervace__boxik2">
+                <label class="strankaRezervace_labely" for="email"> Emailová adresa: </label>
+                 <input class="strankaRezervace__policko" type="email" id="email" name="email" required>
+              </div>
 
-     
+         </div>
 
-    <div class="rezervace__jmeno">
-        <label  for="jmeno"> Jméno </label>
-        <input type="text" name="jmeno" id="jmeno" required>
+        <div class="strankaRezervace__box">
+            <div class=" strankaRezervace__boxik1 strankaRezervace__poznamka">
+                <label class="strankaRezervace_labely" for="poznamka">Poznámka:</label>
+                <textarea class="strankaRezervace__policko strankaRezervace__polePoznamka" name="poznamka" id="poznamka" placeholder="Dejte nám vědět předem, pokud máte alergie, dietní omezení či jiné preference (vegetariánské, bezlaktózové, bezlepkové...)"></textarea>
+            </div>
+        </div>
 
-    </div>
+        <div class="strankaRezervace__box">
+            <div class="strankaRezervace__boxik1">
+                <input class="strankaRezervace__tlacitkoSubmit" type="submit" value="Potvrdit rezervaci" rows="10" maxlength="300">
+            </div>
+        </div>
 
-    <div class="rezervace__prijmeni">
-        <label  for="jmeno"> Příjmení </label>
-        <input type="text" name="prijmeni" id="prijmeni" required>
-
-    </div>
-    
-
-    <div class="rezervace__telefon">
-
-        <label  for="telefon"> Telefonní číslo </label>
-
-        <input type="tel" id="telefon" name="telefon" required>
-
-    </div>
-
-    <div class="rezervace__email">
-
-        <label  for="email"> Emailová adresa </label>
-        <input type="email" id="email" name="email" required>
-
-    </div>
-
-    <div class="rezervace__poznamka">
-        
-        <label for="poznamka"></label>
-        <textarea name="poznamka" id="poznamka"></textarea>
-
-
-    </div>
-
-    <div class="rezervace__tlacitko">
-
-        <input type="submit" value="Potvrdit rezervaci" rows="10" maxlength="300">
-
-    </div>
+    </form>
 
 </section>
