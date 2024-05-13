@@ -114,8 +114,6 @@ body{
 }
 
 
-
-
 /* Hlavička */
     
 .hlavicka{
@@ -130,7 +128,7 @@ body{
 
 @media screen and (min-width: 640px){
     .hlavicka{
-        height: 600px;
+        height: 550px;
     }
 }
 
@@ -553,7 +551,7 @@ align-items: center;
     .strankaMenu__dezerty,
     .strankaMenu__hlavnoChody,
     .strankaMenu__napojovyListek{
-    padding: 3% 10%;
+    padding: 5% 10%;
     } 
 }
 
@@ -589,6 +587,10 @@ align-items: center;
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
+}
+
+.strankaMenu__polozka{
+    padding: 20px 0 0 0 ;
 }
 
 /* Stránka  s degustačním menu */
