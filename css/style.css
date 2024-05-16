@@ -120,7 +120,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     height: 400px;
-    background-image: url(/images/hlavni_fotka.jpg);
+    background-image: url(/images/hlavni_fotka.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -456,7 +456,7 @@ text-align: center;
 /* Degustační menu*/
 
 .degustacniMenu{
-background-image: url(/images/degustacni_menu.jpg);
+background-image: url(/images/degustacni_menu.webp);
 background-repeat: no-repeat;
 background-position: center;
 background-size: cover;
@@ -480,10 +480,12 @@ align-items: center;
 }
 }
 
+
 /* Patička */
 
 .paticka{
     padding: 2.5% 0;
+    background-color: var(--sekundarniBarva);
 }
 .paticka__logo{
     text-align: center;
@@ -539,7 +541,7 @@ align-items: center;
 }
 
 
-.strankaMenu__hlavnoChody,
+.strankaMenu__hlavniChody,
 .strankaMenu__napojovyListek{
     padding: 10% 15%;  
 }
@@ -549,9 +551,9 @@ align-items: center;
 
     .strankaMenu__predkrmy,
     .strankaMenu__dezerty,
-    .strankaMenu__hlavnoChody,
+    .strankaMenu__hlavniChody,
     .strankaMenu__napojovyListek{
-    padding: 5% 10%;
+    padding: 0 10%;
     } 
 }
 
@@ -564,24 +566,43 @@ align-items: center;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 5% 0;
+        margin: 0;
     }
+}
+.strankaMenu__box{
+    padding: 0 0 10% 0;
+}
+
+@media screen and  (min-width: 640px){
+    
     .strankaMenu__box{
         flex-basis: 50%;
+        padding: 0;
+        margin: 0;
     }
 }
 
 .strankaMenu__boxNaObrazky{
-    padding: 0 15%;
-    margin: 10% 0;
+    padding: 0;
 }
 
 @media screen and  (min-width: 640px){
     .strankaMenu__boxNaObrazky{
         flex-basis: 50%;
-        margin: 0;
-        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 7%;
     }
 }
+
+@media screen and  (min-width: 640px){
+    .strankaMenu__boxNaObrazky--poradi{
+        order: -1;
+    }
+}
+
 
 .strankaMenu_obrazek{
     max-width: 100%;
@@ -590,18 +611,42 @@ align-items: center;
 }
 
 .strankaMenu__polozka{
-    padding: 20px 0 0 0 ;
+    padding: 15px 0 0 0 ;
 }
 
 /* Stránka  s degustačním menu */
 
 .stranaDegustacniMenu{
-    padding: 5% 10%;
+    padding: 10%;
     text-align: center;
 }
-.stranaDegustacniMenu__uvod{
-    padding: 5% 0;
+
+@media screen and  (min-width: 640px){
+    .stranaDegustacniMenu{
+        padding: 5% 10%;
+    }
 }
+.stranaDegustacniMenu__uvod{
+    padding: 0 0 3% 0;
+}
+
+.stranaDegustacniMenu__cena{
+    padding: 3% 0;
+}
+
+/* .stranaDegustacniMenu__box{
+    height: 200px;
+    margin: 5% 0 0 0;
+}
+
+.stranaDegustacniMenu__foto{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+} */
+
+
+
 
 /*stranka kontakt*/
 
@@ -717,11 +762,11 @@ align-items: center;
 }
 
 .strankaRezervace__poznamka{
-    height: 160px;
+    height: 100%;
 }
 
 .strankaRezervace__polePoznamka{
-    height: 100%;
+    height: 160px;
 }
 
 .strankaRezervace__tlacitkoSubmit{
